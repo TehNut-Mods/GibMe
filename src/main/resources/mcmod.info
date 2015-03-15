@@ -1,0 +1,16 @@
+[
+{
+  "modid": "༼ つ ◕_◕ ༽つ",
+  "name": "༼ つ ◕_◕ ༽つ",
+  "description": "༼ つ ◕_◕ ༽つ THINGS ༼ つ ◕_◕ ༽つ",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": [ "TehNut" ],
+  "credits": "",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
