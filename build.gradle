@@ -17,11 +17,6 @@ plugins {
 
 apply plugin: 'maven-publish'
 
-def build_number = 'CUSTOM'
-
-if (System.getenv('BUILD_NUMBER') != null)
-    build_number = System.getenv('BUILD_NUMBER')
-
 group = package_group
 archivesBaseName = mod_name
 version = "${mc_version}-${mod_version}-${build_number}"
@@ -81,13 +76,7 @@ jar {
     )
 }
 
-// add a javadoc jar
-task javadocJar(type: Jar, dependsOn: javadoc) {
-    from javadoc.destinationDir
-    classifier = 'javadoc'
-}
-
-tasks.build.dependsOn sourceJar, javadocJar
+tasks.build.dependsOn sourceJar
 
 tasks.withType(JavaCompile) { task ->
     task.options.encoding = 'UTF-8'
@@ -99,7 +88,6 @@ publishing {
         mavenJava(MavenPublication) {
             artifact jar
             artifact sourceJar
-            artifact javadocJar
         }
     }
     repositories {
